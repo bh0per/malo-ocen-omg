@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Silnii</title>
+    <style>
+        #text {
+            color: red;
+        }
+
+        #resultSpan {
+            color: white; /* Kolor tekstu wyniku */
+            font-weight: bold; /* Opcjonalne: Pogrubienie tekstu wyniku */
+            border: 2px solid black; /* Czarna obwódka wokół tekstu wyniku */
+            padding: 5px; /* Opcjonalne: Dodatkowy padding wewnątrz obwódki */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-image: url('https://media.tenor.com/qJRMLPlR3_8AAAAi/maxwell-cat.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #factorialCalculator {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="text">Kalkulator Silnii</h2>
+
+    <form id="factorialCalculator">
+        <label for="number">Liczba:</label>
+        <input type="number" id="number" min="0" required>
+        
+        <button type="button" onclick="calculateFactorial()">Oblicz Silnię</button>
+    </form>
+
+    <h2 id="text">Wynik:</h2>
+    <p id="result"><span id="resultSpan"></span></p>
+
+    <script>
+        function calculateFactorial() {
+            var number = parseInt(document.getElementById('number').value);
+            
+            if (isNaN(number) || number < 0) {
+                document.getElementById('resultSpan').innerHTML = 'Wprowadź poprawną liczbę całkowitą.';
+            } else {
+                var result = 1;
+                for (var i = 1; i <= number; i++) {
+                    result *= i;
+                }
+                document.getElementById('resultSpan').innerHTML = 'Silnia wynosi: ' + result;
+            }
+        }
+    </script>
+    <img src="https://media.tenor.com/yk8nhx3fZGYAAAAj/sebas-bleizeffer.gif" alt="Obrazek" width="50" height="50">
+
+</body>
+</html>
